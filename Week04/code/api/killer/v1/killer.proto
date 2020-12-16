@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package homework.killer.v1;
+import "google/api/annotations.proto";
+
+option go_package = "homework04/api/killer/v1;v1";
+
+service Killer {
+    rpc Kill (KillReq) returns (KillRsp) {
+        option (google.api.http) = {
+            post: "/v1/kill",
+        };
+    }
+}
+
+message KillReq {
+    string TargetName = 1;
+}
+message KillRsp {
+    // 结果信息
+    string message = 1;
+}
