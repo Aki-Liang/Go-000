@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Aki-Liang/Go-000/Week04/code/api/killer/v1"
+	pb "homework04/api/killer/v1"
 	"google.golang.org/grpc"
 )
 

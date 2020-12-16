@@ -1,13 +1,12 @@
 package main
 
 import (
+	"homework04/internal/di"
+	"log"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-
-	"github.com/Aki-Liang/Go-000/Week04/code/internal/di"
-	"github.com/labstack/gommon/log"
 )
 
 func main() {
@@ -19,11 +18,11 @@ func main() {
 	signal.Notify(c, syscall.SIGHUP, syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT)
 	for {
 		s := <-c
-		log.Info("get a signal %s", s.String())
+		log.Printf("get a signal %s", s.String())
 		switch s {
 		case syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT:
 			closeFunc()
-			log.Info("k-demo exit")
+			log.Printf("homework exit")
 			time.Sleep(time.Second)
 			return
 		case syscall.SIGHUP:

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	pb "github.com/Aki-Liang/Go-000/Week04/code/api/killer/v1"
-	"github.com/Aki-Liang/Go-000/Week04/code/internal/dao"
+	pb "homework04/api/killer/v1"
+	"homework04/internal/dao"
 	"github.com/google/wire"
 )
 

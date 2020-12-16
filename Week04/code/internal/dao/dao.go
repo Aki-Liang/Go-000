@@ -3,7 +3,8 @@ package dao
 import (
 	"context"
 
-	"github.com/Aki-Liang/Go-000/Week04/code/internal/model"
+	"homework04/internal/model"
+
 	"github.com/google/wire"
 	"github.com/jinzhu/gorm"
 	xerrors "github.com/pkg/errors"

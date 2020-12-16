@@ -1,12 +1,8 @@
 package di
 
 import (
-	"context"
-	"time"
+	"homework04/internal/service"
 
-	"log"
-
-	"github.com/Aki-Liang/Go-000/Week04/code/internal/service"
 	"google.golang.org/grpc"
 )
 
@@ -21,11 +17,11 @@ func NewApp(svc *service.Service, grpcSvr *grpc.Server) (app *App, closeFunc fun
 		grpcSvr: grpcSvr,
 	}
 	closeFunc = func() {
-		ctx, cancel := context.WithTimeout(context.Background(), 35*time.Second)
-		if err := grpcSvr.Shutdown(ctx); err != nil {
-			log.Printf("grpcSrv.Shutdown error(%v)", err)
-		}
-		cancel()
+		// ctx, cancel := context.WithTimeout(context.Background(), 35*time.Second)
+		// if err := grpcSvr .Shutdown(ctx); err != nil {
+		// 	log.Printf("grpcSrv.Shutdown error(%v)", err)
+		// }
+		// cancel()
 	}
 	return
 }
