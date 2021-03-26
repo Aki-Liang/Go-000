@@ -1,0 +1,21 @@
+syntax = "proto3";
+option go_package = "github.com/Aki-Liang/Go-000/WeekFinal/finalproj/api";
+
+message RankListReq {
+    int32 Skip  = 1;
+    int32 Limit = 2;
+}
+
+message RankItem {
+    uint64 UserId = 1;
+    int32  Score = 2;
+}
+
+message RankListRsp {
+    repeated RankItem Items = 1;
+    int32 Total = 2;
+}
+
+service StatsSvr {
+    rpc GetRankList (RankListReq) returns (RankListRsp);
+}
